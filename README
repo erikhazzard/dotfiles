@@ -1,5 +1,11 @@
 My config files
 ----------------
-.vimrc
-.bashrc
 .profile
+
+
+
+VIM
+----------------
+.vimrc
+(color theme, goes in ~/.vim/colors/)
+ir_black.vim
