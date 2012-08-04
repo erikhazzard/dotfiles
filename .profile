@@ -39,5 +39,3 @@ fi
 [[ -s "/Users/erikhazzard/.rvm/scripts/rvm" ]] && source "/Users/erikhazzard/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export NODE_ENV=local
-
-alias qa2t='ssh -p 222 -L 8341:localhost:8341 -L 2181:localhost:2181 -L 15200:localhost:15200 -L 11000:localhost:11000 -L 50070:localhost:50070 -L 50030:localhost:50030 lucid@qa02.lcimg.com'
