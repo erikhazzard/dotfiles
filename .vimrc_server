@@ -1,0 +1,82 @@
+set encoding=utf-8
+"-------------------------------------------
+set nocompatible
+syntax on
+
+"Mouse
+set mouse=a
+set selectmode=mouse
+set et
+set sw=4
+
+"Tabs
+set smarttab
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set hls
+
+"allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+"========================================
+behave xterm
+filetype plugin on
+filetype plugin indent on
+
+"========================================
+"UI
+"------------------
+"Color
+set background=dark
+
+"Highlights
+set cursorline
+set incsearch
+set hlsearch                    " highlight search terms
+set linespace=0
+
+"Line numbers
+set number
+highlight lineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkCyan gui=NONE guibg=NONE
+set numberwidth=4
+set colorcolumn=81
+
+"Status stuff
+set laststatus=2
+
+set ruler
+set title
+
+"Status displays
+set showmode
+set showcmd
+set showmatch
+
+"========================================
+""Indents
+
+set smartindent
+set autoindent
+filetype indent on
+
+"Remember last position in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+"Command and status line
+set ruler                   " show the ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+set showcmd                 " show partial commands in status line and
+                            " selected characters/lines in visual mode
+
+set laststatus=2
+
+" Broken down into easily includeable segments
+set statusline=%<%f\    " Filename
+set statusline+=%w%h%m%r " Options
+set statusline+=\ [%{&ff}/%Y]            " filetype
+set statusline+=\ [%{getcwd()}]          " current dir
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
